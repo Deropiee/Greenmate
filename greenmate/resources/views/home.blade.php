@@ -22,11 +22,24 @@
     <!-- Green City Header -->
     <header class="bg-green-400 text-white py-48 text-center">
         <h1 class="text-5xl md:text-6xl font-extrabold tracking-wide">Green City</h1>
-        <p class="mt-4 text-lg md:text-xl text-green-100">Laat jouw stem horen voor een groenere wereld</p>
+        <p class="mt-4 text-lg md:text-xl text-green-100">asdgasdgasdgk;asdmgksadg</p>
     </header>
 
+    <!-- Game Section -->
+    <section class="bg-white py-32 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-green-600 mb-10">Speel Green City</h2>
+
+            <!-- Game Placeholder -->
+            <div class="w-full aspect-video bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 text-xl shadow-inner">
+                <!-- Replace this with an iframe or canvas later -->
+                Clash of Clans sim city builder, green city oh hell yeah les go
+            </div>
+        </div>
+    </section>
+
     <!-- Comment Section -->
-    <section class="py-20 px-6 bg-gray-50">
+    <section class="py-20 px-6 mt-px50 bg-gray-50">
         <div class="max-w-2xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-green-600 mb-6">Laat een reactie achter</h2>
             <form action="#" method="POST" class="bg-white shadow-md rounded-lg p-8 space-y-6">
