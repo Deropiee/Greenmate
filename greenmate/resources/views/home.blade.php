@@ -58,24 +58,30 @@
 
 
     <!-- Over Ons Section -->
-    <section class="py-20 px-6 mt-px50 bg-gray-50" id="over-ons">
-        <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-green-600 mb-6">Over Ons!</h2>
-            <p class="text-center">
-                Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en technologie.
-                Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve spellen
-                te maken en slimme software-oplossingen te bouwen.
-            </p>
-            <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook impact
-                maken.</p>
-            <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b class="text-green-500">Green
-                    City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw, beheer
-                en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse manier.
-            </p>
-            <p class="mt-2">Of het nu gaat om games of software, bij <b class="text-green-500">Greenmate</b>
-                combineren we fun met functionaliteit.</p>
-        </div>
-    </section>
+    <div class="relative">
+        <svg class="absolute top-0 left-0 w-full h-full -z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#EFEFEF" points="0,0 100,20 100,100 0,80" />
+        </svg>
+        <section class="py-20 px-6 mt-px50" id="over-ons">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-green-600 mb-6">Over Ons!</h2>
+                <p class="text-center">
+                    Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en technologie.
+                    Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve spellen
+                    te maken en slimme software-oplossingen te bouwen.
+                </p>
+                <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook impact
+                    maken.</p>
+                <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b class="text-green-500">Green
+                        City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw, beheer
+                    en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse manier.
+                </p>
+                <p class="mt-2">Of het nu gaat om games of software, bij <b class="text-green-500">Greenmate</b>
+                    combineren we fun met functionaliteit.</p>
+            </div>
+        </section>
+    </div>
+    
 
     <!-- Comment Section -->
     <section class="py-20 px-6 mt-px50" id="comment">
