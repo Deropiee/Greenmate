@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -12,47 +12,113 @@
     <!-- Navbar -->
     <nav class="flex items-center justify-between px-20 py-4 bg-white shadow">
         <div class="text-xl font-bold text-green-600">Green Mate</div>
-        <div>
-            <a href="#" class="text-gray-700 hover:text-green-600 mx-4">Spelen</a>
-            <a href="#" class="text-gray-700 hover:text-green-600 mx-4">Over ons</a>
-            <a href="#" class="text-gray-700 hover:text-green-600 mx-4">Contact</a>
+        <div class="scroll-smooth">
+            <a href="#speel" class="text-gray-700 hover:text-green-600 mx-4">Spelen</a>
+            <a href="#over-ons" class="text-gray-700 hover:text-green-600 mx-4">Over ons</a>
+            <a href="#comment" class="text-gray-700 hover:text-green-600 mx-4">Comment</a>
+        </div>
+        <div class="flex items-center">
+            @guest
+                <a href="{{ route('login') }}" class="text-gray-700 hover:text-green-600 mx-4">Login</a>
+                <a href="{{ route('register') }}" class="text-gray-700 hover:text-green-600 mx-4">Register</a>
+            @else
+                <span class="text-gray-700 mx-4">Hey, {{ Auth::user()->name }}!</span>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="text-gray-700 hover:text-green-600 mx-4">Logout</button>
+                </form>
+            @endguest
         </div>
     </nav>
 
     <!-- Green City Header -->
     <header class="bg-green-400 text-white py-48 text-center">
+        <p class="mt-4 text-md text-green-100"><i>Greenmate presents:</i></p>
         <h1 class="text-5xl md:text-6xl font-extrabold tracking-wide">Green City</h1>
-        <p class="mt-4 text-lg md:text-xl text-green-100">asdgasdgasdgk;asdmgksadg</p>
     </header>
 
     <!-- Game Section -->
-    <section class="bg-white py-32 px-6">
+    <section class="bg-white py-32 px-6" id="speel">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-green-600 mb-10">Speel Green City</h2>
 
             <!-- Game Placeholder -->
-            <div class="w-full aspect-video bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 text-xl shadow-inner">
-                <!-- Replace this with an iframe or canvas later -->
+            <div
+                class="w-full aspect-video bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 text-xl shadow-inner">
                 Clash of Clans sim city builder, green city oh hell yeah les go
             </div>
         </div>
     </section>
 
-    <!-- Comment Section -->
-    <section class="py-20 px-6 mt-px50 bg-gray-50">
+    <!-- Over Ons Section -->
+    <section class="py-20 px-6 mt-px50 bg-gray-50" id="over-ons">
         <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-green-600 mb-6">Laat een reactie achter</h2>
-            <form action="#" method="POST" class="bg-white shadow-md rounded-lg p-8 space-y-6">
-                <div>
-                    <label for="name" class="block text-left text-sm font-semibold text-gray-700">Naam</label>
-                    <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <h2 class="text-3xl font-bold text-green-600 mb-6">Over Ons!</h2>
+            <p class="text-center">
+                Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en technologie.
+                Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve spellen
+                te maken en slimme software-oplossingen te bouwen.
+            </p>
+            <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook impact
+                maken.</p>
+            <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b class="text-green-500">Green
+                    City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw, beheer
+                en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse manier.
+            </p>
+            <p class="mt-2">Of het nu gaat om games of software, bij <b class="text-green-500">Greenmate</b>
+                combineren we fun met functionaliteit.</p>
+        </div>
+    </section>
+
+    <!-- Comment Section -->
+    <section class="py-20 px-6 mt-px50" id="comment">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-green-600 mb-6">Reacties</h2>
+
+            <!-- Display existing comments -->
+            @foreach ($comments as $comment)
+                <div class="bg-gray-100 p-4 rounded-lg mb-4 text-left">
+                    <p class="font-bold text-green-600">
+                        {{ $comment->user->name ?? $comment->email }}
+                    </p>
+                    <p>{{ $comment->message }}</p>
+                    <p class="text-xs text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
                 </div>
-                <div>
-                    <label for="message" class="block text-left text-sm font-semibold text-gray-700">Bericht</label>
-                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required></textarea>
-                </div>
-                <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition">Verstuur</button>
-            </form>
+            @endforeach
+
+            <!-- Pagination links -->
+            <div class="mt-4">
+                {{ $comments->links() }}
+            </div>
+            <h2 class="text-3xl font-bold text-green-600 mb-6 mt-12">Laat een reactie achter</h2>
+
+            @auth
+                <form action="{{ route('comments.store') }}" method="POST"
+                    class="bg-white shadow-md rounded-lg p-8 space-y-6">
+                    @csrf
+                    <div>
+                        <label for="email" class="block text-left text-sm font-semibold text-gray-700">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required value="{{ old('email', Auth::user()->email) }}">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-left text-sm font-semibold text-gray-700">Bericht</label>
+                        <textarea id="message" name="message" rows="4"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>{{ old('message') }}</textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
+                        Verstuur
+                    </button>
+                </form>
+            @else
+                <p class="mt-4 text-red-500">
+                    Je moet ingelogd zijn om een reactie achter te laten. <a href="{{ route('login') }}"
+                        class="underline">Login</a>
+                </p>
+            @endauth
         </div>
     </section>
 
