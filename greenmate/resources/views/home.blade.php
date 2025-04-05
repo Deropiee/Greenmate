@@ -37,18 +37,25 @@
         <h1 class="text-5xl md:text-6xl font-extrabold tracking-wide">Green City</h1>
     </header>
 
-    <!-- Game Section -->
-    <section class="bg-white py-32 px-6" id="speel">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-green-600 mb-10">Speel Green City</h2>
+    <!-- Background shape behind the section -->
+    <div class="relative">
+        <svg class="absolute top-0 left-0 w-full h-full -z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon fill="#A7E8A1" points="0,20 100,0 100,80 0,100" />
+        </svg>
 
-            <!-- Game Placeholder -->
-            <div
-                class="w-full aspect-video bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 text-xl shadow-inner">
-                Clash of Clans sim city builder, green city oh hell yeah les go
+        <!-- Actual section content -->
+        <section id="speel" class="relative py-32 px-6 ">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-green-600 mb-10">Speel Green City</h2>
+                <div
+                    class="w-full max-w-3xl mx-auto aspect-video bg-gray-900 rounded-xl flex items-center justify-center text-white shadow-xl">
+                    Unity Game goes here
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+
 
     <!-- Over Ons Section -->
     <section class="py-20 px-6 mt-px50 bg-gray-50" id="over-ons">
