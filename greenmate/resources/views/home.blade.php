@@ -62,7 +62,7 @@
         <svg class="absolute top-0 left-0 w-full h-full -z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="#EFEFEF" points="0,0 100,20 100,100 0,80" />
         </svg>
-        <section class="py-20 px-6 mt-px50" id="over-ons">
+        <section class="py-32 px-6 mt-px50" id="over-ons">
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl font-bold text-green-600 mb-6">Over Ons!</h2>
                 <p class="text-center">
