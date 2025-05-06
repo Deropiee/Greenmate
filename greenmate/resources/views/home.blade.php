@@ -10,8 +10,8 @@
 <body class="bg-white text-gray-900 antialiased">
 
     <!-- Navbar -->
-    <nav class="flex items-center justify-between px-20 py-4 bg-white shadow">
-        <div class="text-xl font-bold text-green-600">Green Mate</div>
+    <nav class="sticky top-0 z-50 bg-white shadow flex items-center justify-between px-20 py-4">
+        <x-application-logo class="h-10" />
         <div class="scroll-smooth">
             <a href="#speel" class="text-gray-700 hover:text-green-600 mx-4">Spelen</a>
             <a href="#over-ons" class="text-gray-700 hover:text-green-600 mx-4">Over ons</a>
@@ -66,22 +66,28 @@
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl font-bold text-green-600 mb-6">Over Ons!</h2>
                 <p class="text-center">
-                    Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en technologie.
-                    Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve spellen
+                    Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en
+                    technologie.
+                    Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve
+                    spellen
                     te maken en slimme software-oplossingen te bouwen.
                 </p>
-                <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook impact
+                <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook
+                    impact
                     maken.</p>
-                <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b class="text-green-500">Green
-                        City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw, beheer
-                    en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse manier.
+                <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b
+                        class="text-green-500">Green
+                        City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw,
+                    beheer
+                    en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse
+                    manier.
                 </p>
                 <p class="mt-2">Of het nu gaat om games of software, bij <b class="text-green-500">Greenmate</b>
                     combineren we fun met functionaliteit.</p>
             </div>
         </section>
     </div>
-    
+
 
     <!-- Comment Section -->
     <section class="py-20 px-6 mt-px50" id="comment">
