@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Green Mate</title>
-    @vite('resources/css/app.css')
+    @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
 
 <body class="bg-white text-gray-900 antialiased">
 
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white shadow flex items-center justify-between px-20 py-4">
-        <x-application-logo class="h-10" />
+    <nav class="flex items-center justify-between px-20 py-4 bg-white shadow">
+        <div class="text-xl font-bold text-green-600">Green Mate</div>
         <div class="scroll-smooth">
             <a href="#speel" class="text-gray-700 hover:text-green-600 mx-4">Spelen</a>
             <a href="#over-ons" class="text-gray-700 hover:text-green-600 mx-4">Over ons</a>
@@ -39,19 +39,38 @@
 
     <!-- Background shape behind the section -->
     <div class="relative">
-        <svg class="absolute top-0 left-0 w-full h-full -z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg class="absolute top-[-2rem] left-0 w-full h-[110%] -z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon fill="#A7E8A1" points="0,20 100,0 100,80 0,100" />
         </svg>
 
         <!-- Actual section content -->
-        <section id="speel" class="relative py-32 px-6 ">
-            <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-green-600 mb-10">Speel Green City</h2>
-                <div
-                    class="w-full max-w-3xl mx-auto aspect-video bg-gray-900 rounded-xl flex items-center justify-center text-white shadow-xl">
-                    Unity Game goes here
-                </div>
+        <section id="unity-section" class="py-20 flex flex-col items-center">
+        <h2 class="text-4xl font-bold text-green-400 mb-10">Speel Green City</h2>
+        
+        <div id="unity-container" class="relative w-full max-w-4xl aspect-[16/9] rounded-lg overflow-hidden bg-black shadow-xl">
+            
+            <!-- Canvas, hidden initially -->
+            <canvas id="unity-canvas" class="absolute top-0 left-0 w-full h-full hidden"></canvas>
+
+            <!-- Loading bar -->
+            <div id="unity-loading-bar" class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-80 z-30">
+            <div class="w-3/4 bg-gray-700 rounded-full h-6 overflow-hidden mb-4">
+                <div id="unity-progress-bar-full" class="bg-green-500 h-6 w-0 transition-all duration-300"></div>
             </div>
+            <p class="text-green-400 font-semibold">Laden...</p>
+            </div>
+
+            <!-- Start button, hidden initially -->
+            <button id="unity-start-button" class="hidden absolute inset-0 m-auto w-40 h-12 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg z-40">
+            Start
+            </button>
+
+            <!-- Fullscreen button -->
+            <button id="unity-fullscreen-button" class="absolute top-3 left-3 bg-green-700 text-white px-3 py-1 rounded hover:bg-green-800 z-40">
+            Fullscreen
+            </button>
+            
+        </div>
         </section>
     </div>
 
@@ -66,28 +85,22 @@
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl font-bold text-green-600 mb-6">Over Ons!</h2>
                 <p class="text-center">
-                    Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en
-                    technologie.
-                    Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve
-                    spellen
+                    Bij <b class="text-green-500">Greenmate</b> draait alles om creativiteit, duurzaamheid en technologie.
+                    Wij zijn een gepassioneerd team van developers en game designers die samenkomen om innovatieve spellen
                     te maken en slimme software-oplossingen te bouwen.
                 </p>
-                <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook
-                    impact
+                <p class="mt-2">Onze missie? Toffe digitale ervaringen creëren die niet alleen leuk zijn, maar ook impact
                     maken.</p>
-                <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b
-                        class="text-green-500">Green
-                        City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw,
-                    beheer
-                    en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse
-                    manier.
+                <p class="mt-2">Op dit moment presenteren we met trots ons nieuwste spel: <b class="text-green-500">Green
+                        City</b>. Een interactieve game waarin jij de toekomst van een duurzame stad bepaalt. Bouw, beheer
+                    en laat jouw groene stad groeien terwijl je leert over milieuvriendelijke keuzes op een speelse manier.
                 </p>
                 <p class="mt-2">Of het nu gaat om games of software, bij <b class="text-green-500">Greenmate</b>
                     combineren we fun met functionaliteit.</p>
             </div>
         </section>
     </div>
-
+    
 
     <!-- Comment Section -->
     <section class="py-20 px-6 mt-px50" id="comment">

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('message');
             $table->timestamps();
 
-            // When a user is deleted, their comments are deleted as well.
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
