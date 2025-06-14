@@ -18,7 +18,7 @@ en verwijder alles behalve de greenmate folder
 
 open cmd en typ de volgende zinnen:
 
-- cd greenmate
+- cd Herd/Greenmate/greenmate
 
 - php artisan migrate en schrijf 'yes' om de database te maken
 
