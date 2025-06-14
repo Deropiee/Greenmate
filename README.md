@@ -20,7 +20,7 @@ open cmd en typ de volgende zinnen:
 
 - cd Herd/Greenmate/greenmate
 
-- php artisan migrate en schrijf 'yes' om de database te maken
+- php artisan migrate (en schrijf 'yes' om de database te maken)
 
 - npm install
 
