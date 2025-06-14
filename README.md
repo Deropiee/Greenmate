@@ -14,7 +14,7 @@ en verwijder alles behalve de greenmate folder
 
 - ga naar herd -> general en klik op add path.
 
-- kies de bovenliggende folder van het project folder( meestal Greenmate met hoofdletter wanneer gecloned)
+- kies de bovenliggende folder van het project folder( meestal Greenmate met hoofdletter wanneer gecloned is)
 
 open cmd en typ de volgende zinnen:
 
